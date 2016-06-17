@@ -1,0 +1,82 @@
+\documentclass[12pt]{beamer}
+\usetheme{metropolis}
+\usepackage{listings}
+\newenvironment{code}{\ttfamily}{\par}
+
+\title{Terraform}
+\subtitle{Infrastructure automation made easier}
+\titlegraphic{\includegraphics[width=2cm]{terraform.png}}
+
+\begin{document}
+\metroset{titleformat frame=smallcaps}
+
+\maketitle
+
+\section{Overview}
+
+\begin{frame}{What is Terraform?}
+  Terraform is an infrastructure management tool.
+  \begin{itemize}
+  \item Declarative resource management across cloud providers
+  \item Easy (custom) syntax for configuration files
+  \item Support for code structuring through modules
+  \item Separate planning and execution stages
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Usage overview}
+  \begin{enumerate}
+  \item Write Terraform configuration files
+  \item Generate and check execution plan with \texttt{terraform plan}
+  \item Execute plan with \texttt{terraform apply}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Systemd units}
+  Units specify how and what to start. Several types exist:
+  \begin{code}
+    \small
+    \begin{columns}[T,onlytextwidth]
+      \column{0.5\textwidth}
+      \begin{itemize}
+      \item systemd.service
+      \item systemd.target
+      \item systemd.timer
+      \item systemd.path
+      \item systemd.socket
+      \end{itemize}
+      \column{0.5\textwidth}
+      \begin{itemize}
+      \item systemd.device
+      \item systemd.mount
+      \item systemd.swap
+      \item systemd.slice
+      \end{itemize}
+    \end{columns}
+  \end{code}
+\end{frame}
+
+\section{Terraform Enterprise}
+
+\section{Demo}
+
+\begin{frame}{Systemd criticism}
+  Systemd has been heavily criticised, usually focusing around a few points:
+  \begin{itemize}
+  \item Feature-creep: Systemd absorbs more and more other services
+  \item Opaque: systemd's inner workings are harder to understand than old \texttt{init}
+  \item Unstable: development is quick and breakage happens
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Systemd adoption}
+  Systemd was initially adopted by RedHat (and related distributions).
+
+  It spread quickly to others, for example ArchLinux.
+
+  Debian and Ubuntu were the last major players who decided to adopt it, but not without drama.
+\end{frame}
+
+\section{Questions?}
+
+\end{document}
